@@ -1,14 +1,14 @@
 {
   "name": "bostondv/bootstrap-ninja-forms",
   "type": "wordpress-plugin",
-  "license": "GPLv3",
+  "license": "MIT",
   "description": "Adds Bootstrap classes to Ninja Forms",
   "homepage": "https://github.com/bostondv/bootstrap-ninja-forms",
   "authors": [
     {
       "name": "Boston Dell-Vandenberg",
       "email": "boston@pomelodesign.com",
-      "homepage": "https://github.com/bostondv/"
+      "homepage": "http://www.pomelodesign.com"
     }
   ],
   "keywords": [

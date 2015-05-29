@@ -3,12 +3,13 @@
 Plugin Name: Bootstrap Classes for Ninja Forms
 Plugin URI: https://github.com/bostondv/bootstrap-ninja-forms
 Description: Adds Bootstrap classes to Ninja Forms
-Version: 1.0.1
+Version: 1.0.2
 Author: bostondv
 Author URI: http://pomelodesign.com
 Text Domain: bs-ninja-forms
 Domain Path: /languages/
-License: GPLv3
+License: MIT
+License URI: http://opensource.org/licenses/MIT
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
