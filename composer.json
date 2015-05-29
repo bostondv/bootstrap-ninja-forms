@@ -1,0 +1,28 @@
+{
+  "name": "bostondv/bootstrap-ninja-forms",
+  "type": "wordpress-plugin",
+  "license": "GPLv3",
+  "description": "Adds Bootstrap classes to Ninja Forms",
+  "homepage": "https://github.com/bostondv/bootstrap-ninja-forms",
+  "authors": [
+    {
+      "name": "Boston Dell-Vandenberg",
+      "email": "boston@pomelodesign.com",
+      "homepage": "https://github.com/bostondv/"
+    }
+  ],
+  "keywords": [
+    "wordpress",
+    "bootstrap",
+    "ninja forms",
+    "css",
+    "forms"
+  ],
+  "support": {
+    "issues": "https://github.com/bostondv/bootstrap-ninja-forms/issues/"
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "composer/installers": "~1.0"
+  }
+}

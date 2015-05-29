@@ -1,3 +1,3 @@
 # Bootstrap Ninja Forms
 
-TODO
+Adds Bootstrap classes to Ninja Forms.
