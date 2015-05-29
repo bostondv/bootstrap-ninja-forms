@@ -1,3 +1,3 @@
-# bootstrap-ninja-forms
+# Bootstrap Ninja Forms
 
 TODO
