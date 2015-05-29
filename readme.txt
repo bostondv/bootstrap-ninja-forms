@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Tags: ninja forms, bootstrap, styles, css, forms 
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 Adds Bootstrap classes to Ninja Forms.
 
@@ -22,6 +22,15 @@ Note: This plugin does not load Bootstrap CSS or JavaScript itself. You should u
 1. Activate the Bootstrap Ninja Forms plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+= 1.0.1 =
+
+Release Date: May 29, 2015
+
+* Fixes error when submitting forms
+* Adds control-label classes
+* Adds validation classes
+* Adds help-block classes
 
 = 1.0.0 =
 
