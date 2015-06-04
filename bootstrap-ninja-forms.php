@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap Classes for Ninja Forms
 Plugin URI: https://github.com/bostondv/bootstrap-ninja-forms
 Description: Adds Bootstrap classes to Ninja Forms
-Version: 1.0.2
+Version: 1.0.3
 Author: bostondv
 Author URI: http://pomelodesign.com
 Text Domain: bs-ninja-forms
@@ -45,6 +45,10 @@ class Ninja_Forms_Bootstrap_Classes {
     add_filter( 'ninja_forms_form_class', array( $this, 'forms_form_class' ), 10, 2 );
     add_filter( 'ninja_forms_form_wrap_class', array( $this, 'forms_form_wrap_class' ), 10, 2 );
     add_action( 'ninja_forms_label_class', array( $this, 'forms_label_class' ), 10, 2 );
+    add_filter( 'ninja_forms_display_response_message_class', array( $this, 'response_message_class' ), 10, 2);
+    add_filter( 'ninja_forms_display_required_items_class', array( $this, 'required_items_class' ), 10, 2);
+    add_filter( 'ninja_forms_display_field_processing_error_class', array( $this, 'field_processing_error_class' ), 10, 2);
+    add_filter( 'ninja_forms_display_field_desc_class', array( $this, 'field_desc_class' ), 10, 2);
   }
 
   /**
@@ -149,6 +153,56 @@ class Ninja_Forms_Bootstrap_Classes {
     }
 
     return $data;
+  }
+
+  /**
+   * Modifies response message classes
+   *
+   * @author Boston Dell-Vandenberg
+   * @since  1.0.3
+   */
+  function response_message_class( $class, $form_id ) {
+    if ( strpos( $class, 'ninja-forms-error-msg' ) !== false ) {
+      $class .= ' alert alert-danger';
+    } else if ( strpos( $class, 'ninja-forms-success-msg' ) !== false ) {
+      $class .= ' alert alert-success';
+    } else {
+      $class .= ' alert alert-warning';
+    }
+    return $class;
+  }
+
+  /**
+   * Modifies required items message classes
+   *
+   * @author Boston Dell-Vandenberg
+   * @since  1.0.3
+   */
+  function required_items_class( $class, $form_id ) {
+    $class .= ' alert alert-warning';
+    return $class;
+  }
+
+  /**
+   * Modifies field processing error classes
+   *
+   * @author Boston Dell-Vandenberg
+   * @since  1.0.3
+   */
+  function field_processing_error_class( $class, $field_id ) {
+    $class .= ' help-block';
+    return $class;
+  }
+
+  /**
+   * Modifies field description classes
+   *
+   * @author Boston Dell-Vandenberg
+   * @since  1.0.3
+   */
+  function field_desc_class( $class, $field_id ) {
+    $class .= ' help-block';
+    return $class;
   }
 
   /**
