@@ -1,12 +1,12 @@
 === Bootstrap Ninja Forms ===
 Contributors: bostondv
 Donate link: http://pomelodesign.com/donate
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl.html
+License: MIT
+License URI: http://opensource.org/licenses/MIT
 Tags: ninja forms, bootstrap, styles, css, forms 
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 Adds Bootstrap classes to Ninja Forms.
 
@@ -26,6 +26,12 @@ Written by Boston Dell-Vandenberg of [Pomelo Design](http://www.pomelodesign.com
 1. Activate the Bootstrap Ninja Forms plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+= 1.0.4 =
+
+Release Date: August 21, 2015
+
+* Fixes various PHP notices
 
 = 1.0.3 =
 

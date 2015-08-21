@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap Classes for Ninja Forms
 Plugin URI: https://github.com/bostondv/bootstrap-ninja-forms
 Description: Adds Bootstrap classes to Ninja Forms
-Version: 1.0.3
+Version: 1.0.4
 Author: bostondv
 Author URI: http://pomelodesign.com
 Text Domain: bs-ninja-forms
@@ -123,6 +123,14 @@ class Ninja_Forms_Bootstrap_Classes {
   function forms_field( $data, $field_id ) {
     $settings = $this->get_field_settings( $field_id );
 
+    if ($settings === null || empty($settings['type'])) {
+      return;
+    }
+
+    if (empty($data['class'])) {
+      $data['class'] = '';
+    }
+
     if ( $settings['type'] === '_text' ||
          $settings['type'] === '_textarea' ||
          $settings['type'] === '_profile_pass' ||
@@ -135,7 +143,7 @@ class Ninja_Forms_Bootstrap_Classes {
     }
 
     if ( $settings['type'] === '_desc' ) {
-      $data['class'] = 'form-group';
+      $data['class'] .= 'form-group';
     }
 
     if ( $settings['type'] === '_list' ) {
@@ -161,10 +169,12 @@ class Ninja_Forms_Bootstrap_Classes {
     global $ninja_forms_loading;
     global $ninja_forms_processing;
 
-    if ( isset ( $ninja_forms_loading ) ) {
-      $field_row = $ninja_forms_loading->get_field_settings( $field_id );
-    } else if ( isset ( $ninja_forms_processing ) ) {
+    if ( isset ( $ninja_forms_processing ) && is_object( $ninja_forms_processing ) ) {
       $field_row = $ninja_forms_processing->get_field_settings( $field_id );
+    } else if ( isset ( $ninja_forms_loading ) && is_object( $ninja_forms_loading ) ) {
+      $field_row = $ninja_forms_loading->get_field_settings( $field_id );
+    } else {
+      $field_row = null;
     }
 
     return $field_row;
