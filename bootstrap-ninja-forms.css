@@ -45,3 +45,7 @@
 .form-group.label-left label {
   padding-right: 8px;
 }
+
+.ninja-forms-response-msg:empty {
+  display: none;
+}

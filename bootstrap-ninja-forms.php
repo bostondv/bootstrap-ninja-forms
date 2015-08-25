@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap Classes for Ninja Forms
 Plugin URI: https://github.com/bostondv/bootstrap-ninja-forms
 Description: Adds Bootstrap classes to Ninja Forms
-Version: 1.0.5
+Version: 1.1.0
 Author: bostondv
 Author URI: http://pomelodesign.com
 Text Domain: bs-ninja-forms
@@ -45,6 +45,11 @@ class Ninja_Forms_Bootstrap_Classes {
     add_filter( 'ninja_forms_form_class', array( $this, 'forms_form_class' ), 10, 2 );
     add_filter( 'ninja_forms_form_wrap_class', array( $this, 'forms_form_wrap_class' ), 10, 2 );
     add_action( 'ninja_forms_label_class', array( $this, 'forms_label_class' ), 10, 2 );
+    add_filter( 'ninja_forms_display_field_desc_class', array( $this, 'field_description_class' ), 10, 2 );
+    add_filter( 'ninja_forms_display_field_processing_error_class', array( $this, 'field_error_message_class' ), 10, 2 );
+    add_filter( 'ninja_forms_display_required_items_class', array( $this, 'form_required_items_class' ), 10, 2 );
+    add_filter( 'ninja_forms_display_response_message_class', array( $this, 'form_response_message_class' ), 10, 2 );
+    
   }
 
   /**
@@ -55,14 +60,9 @@ class Ninja_Forms_Bootstrap_Classes {
    */
   function enqueue_scripts() {
     wp_register_style( 'bootstrap_ninja_forms_styles', plugins_url( 'bootstrap-ninja-forms.css', __FILE__ ) );
-    wp_register_script( 'bootstrap_ninja_forms_scripts', plugins_url( 'bootstrap-ninja-forms.js', __FILE__ ), array( 'jquery' ), false, true );
 
     if ( apply_filters( 'bootstrap_ninja_forms_load_styles', true ) ) {
       wp_enqueue_style( 'bootstrap_ninja_forms_styles' );
-    }
-    
-    if ( apply_filters( 'bootstrap_ninja_forms_load_scripts', true ) ) {
-      wp_enqueue_script( 'bootstrap_ninja_forms_scripts' );
     }
   }
 
@@ -160,6 +160,59 @@ class Ninja_Forms_Bootstrap_Classes {
   }
 
   /**
+   * Set class for field descriptions
+   *
+   * @author Boston Dell-Vandenberg
+   * @since 1.1.0
+   */
+  function field_description_class( $class, $field_id ) {
+    $class .= ' help-block';
+    return $class;
+  }
+
+  /**
+   * Set class for field error message
+   *
+   * @author Boston Dell-Vandenberg
+   * @since 1.1.0
+   */
+  function field_error_message_class( $class, $field_id ) {
+    $class .= ' help-block';
+    return $class;
+  }
+
+  /**
+   * Set class for required items message
+   *
+   * @author Boston Dell-Vandenberg
+   * @since 1.1.0
+   */
+  function form_required_items_class( $class, $form_id ) {
+    $class .= ' alert alert-warning';
+    return $class;
+  }
+
+  /**
+   * Set class for response message
+   *
+   * @author Boston Dell-Vandenberg
+   * @since 1.1.0
+   */
+  function form_response_message_class( $class, $form_id ) {
+    $class .= ' alert';
+
+    if ( strpos( $class, 'ninja-forms-error-msg' ) !== false ) {
+      $class .= ' alert-danger';
+    } elseif ( strpos( $class, 'ninja-forms-success-msg' ) !== false ) {
+      $class .= ' alert-success';
+    } else {
+      $class .= ' alert-warning';
+    }
+
+    return $class;
+  }
+
+  /**
    * Gets field settings for specified field ID
    *
    * @author Boston Dell-Vandenberg
@@ -169,9 +222,9 @@ class Ninja_Forms_Bootstrap_Classes {
     global $ninja_forms_loading;
     global $ninja_forms_processing;
 
-    if ( isset ( $ninja_forms_processing ) && is_object( $ninja_forms_processing ) ) {
+    if ( is_object( $ninja_forms_processing ) ) {
       $field_row = $ninja_forms_processing->get_field_settings( $field_id );
-    } else if ( isset ( $ninja_forms_loading ) && is_object( $ninja_forms_loading ) ) {
+    } else if ( is_object( $ninja_forms_loading ) ) {
       $field_row = $ninja_forms_loading->get_field_settings( $field_id );
     } else {
       $field_row = null;
