@@ -27,6 +27,12 @@ Written by Boston Dell-Vandenberg of [Pomelo Design](http://www.pomelodesign.com
 
 == Changelog ==
 
+= 1.1.1 =
+
+Release Date: August 28, 2015
+
+* Add style to hide hidden input wrappers
+
 = 1.1.0 =
 
 Release Date: August 25, 2015

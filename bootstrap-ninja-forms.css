@@ -46,6 +46,10 @@
   padding-right: 8px;
 }
 
+.form-group.hidden-wrap {
+  display: none;
+}
+
 .ninja-forms-response-msg:empty {
   display: none;
 }
