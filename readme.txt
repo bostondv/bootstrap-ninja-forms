@@ -27,6 +27,12 @@ Written by Boston Dell-Vandenberg of [Pomelo Design](http://www.pomelodesign.com
 
 == Changelog ==
 
+= 1.1.2 =
+
+Release Date: September 4, 2015
+
+* Fixes missing space in form-group class
+
 = 1.1.1 =
 
 Release Date: August 28, 2015
