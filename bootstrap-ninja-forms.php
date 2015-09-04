@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap Classes for Ninja Forms
 Plugin URI: https://github.com/bostondv/bootstrap-ninja-forms
 Description: Adds Bootstrap classes to Ninja Forms
-Version: 1.1.2
+Version: 1.1.3
 Author: bostondv
 Author URI: http://pomelodesign.com
 Text Domain: bs-ninja-forms
@@ -108,8 +108,8 @@ class Ninja_Forms_Bootstrap_Classes {
   function forms_field_wrap_class( $field_wrap_class, $field_id ) {
     $settings = $this->get_field_settings( $field_id );
 
-    $field_wrap_class = str_replace('field-wrap', 'form-group', $field_wrap_class);
-    $field_wrap_class = str_replace('ninja-forms-error', 'has-error', $field_wrap_class);
+    $field_wrap_class = str_replace('field-wrap', 'field-wrap form-group', $field_wrap_class);
+    $field_wrap_class = str_replace('ninja-forms-error', 'ninja-forms-error has-error', $field_wrap_class);
 
     return $field_wrap_class;
   }
