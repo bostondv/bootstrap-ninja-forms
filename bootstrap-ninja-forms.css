@@ -14,12 +14,12 @@
   width: 100%;
 }
 
-.form-group.label-left .ninja-forms-field,
-.form-group.label-right .ninja-forms-field,
-.form-group.label-left .ninja-forms-star-rating-control,
-.form-group.label-right .ninja-forms-star-rating-control,
-.form-group.label-left.checkbox-wrap label,
-.form-group.label-right.checkbox-wrap label {
+.form-group.label-left  >.ninja-forms-field,
+.form-group.label-right > .ninja-forms-field,
+.form-group.label-left > .ninja-forms-star-rating-control,
+.form-group.label-right > .ninja-forms-star-rating-control,
+.form-group.label-left.checkbox-wrap > label,
+.form-group.label-right.checkbox-wrap > label {
   display: table-cell;
   width: 100%;
 }
@@ -29,20 +29,20 @@
   vertical-align: middle;
 }
 
-.form-group.label-right label,
-.form-group.label-left label,
-.form-group.label-left.checkbox-wrap .ninja-forms-field,
-.form-group.label-right.checkbox-wrap .ninja-forms-field {
+.form-group.label-right > label,
+.form-group.label-left > label,
+.form-group.label-left.checkbox-wrap > .ninja-forms-field,
+.form-group.label-right.checkbox-wrap > .ninja-forms-field {
   display: table-cell;
   width: 12px;
   white-space: nowrap;
 }
 
-.form-group.label-right label {
+.form-group.label-right > label {
   padding-left: 8px;
 }
 
-.form-group.label-left label {
+.form-group.label-left > label {
   padding-right: 8px;
 }
 
@@ -52,4 +52,15 @@
 
 .ninja-forms-response-msg:empty {
   display: none;
+}
+
+.form-group.list-radio-wrap ul,
+.form-group.list-checkbox-wrap ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.form-group.list-radio-wrap ul li input,
+.form-group.list-checkbox-wrap ul li input {
+  margin: 0 8px 0 0;
 }

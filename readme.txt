@@ -5,8 +5,8 @@ License: MIT
 License URI: http://opensource.org/licenses/MIT
 Tags: ninja forms, bootstrap, styles, css, forms 
 Requires at least: 3.8
-Tested up to: 4.2
-Stable tag: 1.1.3
+Tested up to: 4.8
+Stable tag: 1.1.4
 
 Adds Bootstrap classes to Ninja Forms.
 
@@ -26,6 +26,12 @@ Written by Boston Dell-Vandenberg of [Pomelo Design](http://www.pomelodesign.com
 1. Activate the Bootstrap Ninja Forms plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+= 1.1.4 =
+
+Release Date: July 6, 2017
+
+* Fix List field checkbox and radio styles
 
 = 1.1.3 =
 
